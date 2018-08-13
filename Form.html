@@ -1,0 +1,161 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>Form Verification</title>
+	<style>
+	.maincontent{width:700px;margin:0 auto;}
+	input[type="text"], input[type="email"] {
+    width: 300px;
+    margin-top: 10px;
+    font-family: Arial Unicode MS;
+    font-size: 12px;
+    color: #6B6B6B;
+    padding: 5px 0px 15px 10px;
+    border: none;
+    border-top: 2px solid #CECECE;
+    border-right: 2px solid #DFDFDF;
+    border-left: 2px solid #DFDFDF;
+    border-radius: 5px;
+	}
+	textarea {
+    width: 400px;
+    margin-top: 10px;
+    font-family: Arial Unicode MS;
+    font-size: 12px;
+    color: #6B6B6B;
+    padding: 5px 0px 15px 10px;
+    border: none;
+    border-top: 2px solid #CECECE;
+    border-right: 2px solid #DFDFDF;
+    border-left: 2px solid #DFDFDF;
+    border-radius: 5px;
+    height: 210px;
+	}
+	input[type="submit"], [type="reset"] {
+    cursor: pointer;
+    padding: 10px 35px 10px 35px;
+    margin-top: 20px;
+    background: #8F8F90;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial Unicode MS;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+	}
+	input[type="submit"]:hover{background:#0074E8;}
+	input[type="reset"]:hover{background:#0074E8;}
+	#fnameErr, #lnameErr, #emailErr, #msgErr {
+	    color:red;
+	}
+	</style>
+</head>
+<body>
+	<div class="maincontent">
+<form mathod="post" name="myForm" onsubmit="return validateForm()">
+    <table>
+    <tr>
+        <td><input type="text" name="fname" placeholder="First Name" onkeyup="validateName()"></td>
+        <td><p id="fnameErr"></p></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="lname" placeholder="Last Name" onkeyup="validateLname()"></td>
+        <td><p id="lnameErr"></p></td>
+    </tr>
+    <tr>
+        <td><input type="email" name="email" placeholder="Email Address" onkeyup="validateEmail()"></td>
+        <td><p id="emailErr"></p></td>
+    </tr>
+    <tr>
+        <td><textarea placeholder="Message" name="comment" onkeyup="validateMsg()"></textarea></td>
+        <td><p id="msgErr"></p></td>
+    </tr>
+    <tr>
+        <td><input type="submit" name="submit" value="Send">
+        <input type="reset" name="reset" value="Refresh"></td>
+    </tr>
+    </table>
+</form>
+
+<script>
+	var fname = document.myForm.fname;
+	var fname = document.myForm.fname;
+	var lname = document.myForm.lname;
+	var email = document.myForm.email;
+	var comment = document.myForm.comment;
+	function validateName(){
+	        
+	        if(fname.value == ""){
+	                this.error = false;
+	                fname.style.border = "1px solid red";
+	                document.getElementById("fnameErr").innerHTML = "Please enter your First name !";
+	                return false;
+	        }else{
+	                this.error = true;
+	                fname.style.border = "1px solid green";
+	                document.getElementById("fnameErr").innerHTML = "";
+	                return false;
+	        }
+	}
+	function validateLname(){
+	        if(lname.value == ""){
+	                this.error = false;
+	                lname.style.border = "1px solid red";
+	                document.getElementById("lnameErr").innerHTML = "Please enter your Last name !";
+	                return false;
+	        }else{
+	                this.error = true;
+	                lname.style.border = "1px solid green";
+	                document.getElementById("lnameErr").innerHTML = "";
+	                return false;
+	        }
+	}
+	function validateEmail(){
+	        if(email.value == ""){
+	                this.error = false;
+	                email.style.border = "1px solid red";
+	                document.getElementById("emailErr").innerHTML = "Please enter your email !";
+	                return false;
+	        }else if(email.value.indexOf("@", 0)< 0){
+	                this.error = false;
+	                email.style.border = "1px solid red";
+	                document.getElementById("emailErr").innerHTML = "Please enter Valid email !<b>You missed '@'</b>";
+	                return false;
+	        }else if(email.value.indexOf(".", 0)< 0){
+	                this.error = false;
+	                email.style.border = "1px solid red";
+	                document.getElementById("emailErr").innerHTML = "Please enter Valid email !<b>You missed '.'</b>";
+	                return false;
+	        }
+	        else{
+	                this.error = true;
+	                email.style.border = "1px solid green";
+	                document.getElementById("emailErr").innerHTML = "";
+	                return false;
+	        }
+	}
+	function validateMsg(){
+	        if(comment.value == ""){
+	                this.error = false;
+	                comment.style.border = "1px solid red";
+	                document.getElementById("msgErr").innerHTML = " Please put your message !";
+	                return false;        
+	        }else{
+	                this.error = true;
+	                comment.style.border = "1px solid green";
+	                document.getElementById("msgErr").innerHTML = "";
+	                return false;
+	                
+	        }
+	}
+	function validateForm(){
+		validateName();
+	        validateLname();
+	        validateEmail();
+	        validateMsg();
+	        return error;
+	}
+</script>
+</div>
+</body>
+</html>
