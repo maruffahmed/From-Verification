@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show pass</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style type="text/css">
+	#showpass{
+		width: 15px;
+		border-radius: 50%;
+		border: 1px solid;
+		cursor: pointer;
+		height: 15px;
+	}
+	</style>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td><p>Your password : </p></td>
+		<td><input type="password" name="password" id="password" placeholder="Password"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" name="showpass" id="showpass"><span>Show password</span></td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	$("#showpass").on("click", function(){
+	    var show = document.getElementById("showpass");
+	    var pass = $("#password");
+	    var filedType = pass.attr("type");
+	    if (filedType == "password"){
+	        pass.attr("type", "text");
+	        show.style.background = "black";
+	    }else{
+	        pass.attr("type", "password");
+	        show.style.background = "#fff";
+	    }
+    })
+</script>
+</body>
+</html>

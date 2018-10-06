@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Resposive Menu</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+
+    <style>
+
+        *{
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: sans-serif;
+
+        }
+    .trigger {
+
+        display: block;
+
+        float: left;
+
+        margin-left: 10px;
+
+        margin-top: 5px;
+
+        padding: 5px;
+
+        cursor: pointer;
+
+    }
+
+    .trigger span{
+
+        display: block;
+
+        width: 35px;
+
+        border-radius:40px;
+
+        height: 5px;
+
+        background: black;
+
+        margin-bottom: 5px;
+
+    }
+
+    .res-menu {
+
+        text-align: center;
+
+        display: block;
+
+        list-style: none;
+
+        overflow: hidden;
+
+        height: 0;
+
+        transition: all 400ms ;
+
+    }
+
+    .js-res-menu {
+
+        padding: 11px 0px;
+
+        height: 254px;
+
+        border-bottom: 1px solid #e0e0e0;
+
+    }
+
+    .res-menu > li > a {
+
+        text-decoration: none;
+
+        display: block;
+
+        padding: 13px;
+
+        color: #7e7e7e;
+
+        width: 90%;
+
+        margin: 0px auto;
+
+        transition: all .4s ease;
+
+        text-transform: uppercase;
+
+        font-weight: bold;
+
+    }
+
+    .res-menu > li > a:hover{
+
+        color: #000000;
+
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <ul class="res-menu">
+ 
+            <li><a href="#home" id="select1">Home</a></li>
+
+            <li><a href="#wid" id="select2">What we do ?</a></li>
+
+            <li><a href="#testimonials" id="select3">Testimonials</a></li>
+
+            <li><a href="" id="select4">about</a></li>
+
+            <li><a href="" id="select5">blog</a></li>
+
+        </ul>
+
+        <div class="trigger" id="btn">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <script>
+
+         document.querySelector('.trigger').addEventListener('click',function(){
+
+             document.querySelector('.res-menu').classList.toggle('js-res-menu');
+
+         })
+
+        $(document).ready(function(){
+            $("#select1,#select2,#select3,#select4,#select5").click(function(){
+                $("ul").removeClass("js-res-menu");
+            })
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+<title>Resposive Menu</title>
+
+<script type="text/­javascript" src="jquery.min.js">­</script>
+
+
+
+
+
+<style>
+
+
+
+*{
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+font-family: sans-serif;
+
+}
+
+.trigger {
+
+display: block;
+
+float: left;
+
+margin-left: 10px;
+
+margin-top: 5px;
+
+padding: 5px;
+
+cursor: pointer;
+
+}
+
+
+
+.trigger span{
+
+display: block;
+
+width: 35px;
+
+border-radius:40px;
+
+height: 5px;
+
+background: black;
+
+margin-bottom: 5px;
+
+}
+
+.res-menu {
+
+text-align: center;
+
+display: block;
+
+list-style: none;
+
+overflow: hidden;
+
+height: 0;
+
+transition: all 400ms ;
+
+}
+
+.activeMenu{
+
+padding: 11px 0px;
+
+height: 254px;
+
+border-bottom: 1px solid #e0e0e0;
+
+}
+
+.res-menu > li > a {
+
+text-decoration: none;
+
+display: block;
+
+padding: 13px;
+
+color: #7e7e7e;
+
+width: 90%;
+
+margin: 0px auto;
+
+transition: all .4s ease;
+
+text-transform: uppercase;
+
+font-weight: bold;
+
+}
+
+.res-menu > li > a:hover{
+
+color: #000000;
+
+
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="nav">
+
+<ul class="res-menu">
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#wid">What we do ?</a></li>
+
+<li><a href="#testimonials" >Testimonials</a></li>
+
+<li><a href="#about">about</a></li>
+
+<li><a href="#blog">blog</a></li>
+
+</ul>
+
+<div class="trigger">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+</div>
+
+<script>
+
+document.querySelector('.trigger').addEventListener('click',function(){
+
+     this.previousElementSibling.classList.toggle('activeMenu');
+
+     this.previousElementSibling.addEventListener('click',function(ev){
+
+        if(ev.target.tagName.indexOf('A') != -1){
+
+            this.className = this.className.replace('activeMenu','');
+
+        }
+
+     });
+
+});
+
+</script>
+
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>JS PRACTICE</title>
+
+    <style>
+
+*{
+
+    margin: 0;
+
+    padding: 0;
+
+    outline: 0;
+
+    font-family: sans-serif;
+
+}
+
+.nav-section{
+
+width: 100%;
+
+position: fixed;
+
+background: #fff;
+
+box-shadow: -1px -1px 3px 2px rgb(189, 189, 189);
+
+top: 0;
+
+left: 0;
+
+background: #f8f8f8;
+
+}
+
+.menu-hover{
+
+position: absolute;
+
+background: rgb(82, 82, 82);
+
+bottom: -63px;
+
+height: 3px;
+
+left: -3px;
+
+transition: width .4s ease, left .4s ease;
+
+}
+
+.menu{
+
+margin-left: 10px;
+
+position: relative;
+
+}
+
+.nav-section>.menu>a{
+
+display: block;
+
+font-weight:bold;
+
+padding: 20px;
+
+font-size:18px;
+
+text-transform: uppercase;
+
+text-decoration: none;
+
+float: left;
+
+color: rgb(82, 82, 82);
+
+            }
+
+.Item{
+
+ margin-top: 60px;
+
+ overflow: hidden;
+
+ background: #d1d1d199;
+
+}
+
+.Item>div{
+
+    width: 100%;
+
+    height: 890px;
+
+    border-bottom: 5px solid;
+
+    text-align: center;
+
+}
+
+.Item > div > h1 {
+
+    text-align: center;
+
+    font-size: 100px;
+
+}
+
+.Item>div>h3{
+
+    font-size: 50px;
+
+}
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="nav-section">
+
+        <div class="menu-trigger">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+        <div class="menu">
+
+            <div class="menu-hover" id="menuHover"></div>
+
+            <a href="#first" >HTML</a>
+
+            <a href="#second">JavaScript</a>
+
+            <a href="#three">Python</a>
+
+            <a href="#four">Ruby</a>
+
+            <a href="#five">C++</a>
+
+        </div>
+
+    </nav>
+
+
+
+   <section class="Item">
+
+        <div id="first">
+
+            <h1>HTML</h1>
+
+            <h3>CONTAINER 1</h3>
+
+        </div>
+
+        <div id="second">
+
+            <h1>JAVSCRIPT</h1>
+
+            <h3>CONTAINER 2</h3>
+
+        </div>
+
+        <div id="three">
+
+             <h1>PYTHON</h1>
+
+            <h3>CONTAINER 3</h3>
+
+        </div>
+
+        <div id="four">
+
+             <h1>RUBY</h1>
+
+            <h3>CONTAINER 4</h3>
+
+        </div>
+
+        <div id="five">
+
+             <h1>C++</h1>
+
+            <h3>CONTAINER 5</h3>
+
+        </div>
+
+   </section>
+
+
+
+
+
+    <script>   
+
+     
+
+        var _btns = document.querySelectorAll('.menu>a');
+
+        var  _btnHover = document.querySelector('#menuHover');
+
+       
+
+
+
+       /*  hover section
+
+       ------------------------------------------------- */
+
+        window.addEventListener('load',lodeContent,false);
+
+        function lodeContent(){
+
+            _btnHover.style.width = _btns[0].offsetWidth+'px';
+
+            _btnHover.style.left = _btns[0].offsetLeft+'px';
+
+        }
+
+        for(var _btn of _btns ) {
+
+            _btn.addEventListener('click',clickFunction,false);
+
+        }   
+
+        
+
+        function clickFunction(){
+
+            _btnHover.style.width = this.offsetWidth+'px';
+
+            _btnHover.style.left = this.offsetLeft+'px';
+
+        }
+
+
+
+
+
+       /* scroller section 
+
+       -----------------------------------------------*/
+
+        var _destination;
+
+        var _duration = 0.5;
+
+        var _speed = 20;
+
+        var _target = 0;
+
+        var _durationDelay = 220;
+
+        var _scroller;
+
+       for(var _btn of _btns){
+
+           _btn.addEventListener('click',smoothScroll,false);
+
+       }
+
+       
+
+       function smoothScroll(e){
+
+           e.preventDefault();
+
+           setTimeout(() => {
+
+                scrollingTo(this.href.slice(this.href.lastIndexOf('#')+1));
+
+            },_durationDelay);
+
+       }
+
+       function scrollingTo(_id) {
+
+        _destination = (document.getElementById(_id).offsetTop)-(document.querySelector('.nav-section').offsetHeight);
+
+          _target += _speed;
+
+          _scroller = setTimeout(() => {
+
+            scrollingTo(_id);
+
+          },_duration);
+
+          if(_target >= _destination){
+
+              clearTimeout(_scroller);
+
+              setTimeout(() => {
+
+                _target = 0;
+
+              },0);
+
+          }
+
+          window.scrollTo(0,_target);
+
+       }
+
+      
+
+      /*  ----------------------------------------------------------------------*/
+
+    </script>
+
+</body>
+
+</html> -->
+
